@@ -1,13 +1,10 @@
-
+import React from 'react'
 import {
-  React,
   useState,
   useId
 } from "react";
 import Dice from "./component/Dice";
-const GAMEMODE = 
-  ["LUCKY", "LIAR"]
-;
+const GAMEMODE =  ["LUCKY", "LIAR"]
 function App() {
   const [mode, setModel] = useState(GAMEMODE[0])
   const [dices, setDice] = useState([{
@@ -35,7 +32,7 @@ function App() {
     value: 6,
     select: false
   },
-]);
+])
 
   function start(nowMode){
     setModel(nowMode);
@@ -54,10 +51,9 @@ function App() {
   }
 
   function toggleDice(index){
-    let tempIndex = parseInt(index)
     setDice((currentDices)=>{
       return currentDices.map(dice=>{
-        if (dice.id === tempIndex) {
+        if (dice.id === index) {
             return {...dice, select: !dice.select}
         }
         return dice
@@ -90,9 +86,8 @@ function App() {
             dices && dices.map((showDice, index)=>{
               return <div key={index}>
                       <label>
-                        {mode===GAMEMODE[0]&& <button id={showDice.id} onClick={e=>toggleDice(showDice.id)}></button>}
-                       
-                        < Dice id = {
+                        {mode===GAMEMODE[0]&& <button id={showDice.id} onClick={e=>toggleDice(showDice.id)} className='dnone'></button>}
+                        <Dice id = {
                           showDice.id
                         }
                         value = {
@@ -118,7 +113,7 @@ function App() {
         {mode === GAMEMODE[1]&&(<button onClick={rollAllDices}>Liar Roll</button>)}
 
     </div>
-  );
+  )
 }
 
 export default App;
