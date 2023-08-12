@@ -4,6 +4,8 @@ import {
   useId
 } from "react";
 import Dice from "./component/Dice";
+import Navbar from './component/Navbar';
+import Content from './component/Content';
 const GAMEMODE =  ["LUCKY", "LIAR"]
 function App() {
   const [mode, setModel] = useState(GAMEMODE[0])
@@ -27,16 +29,12 @@ function App() {
     id: useId(),
     value: 5,
     select: false
-  }, {
-    id: useId(),
-    value: 6,
-    select: false
-  },
+  }
 ])
 
-  function start(nowMode){
-    setModel(nowMode);
-  }
+function start(nowMode){
+  setModel(nowMode);
+}
 
   function rollAllDices(){
     setDice((currentDices)=>{
@@ -59,60 +57,28 @@ function App() {
         return dice
       })
     })
-    console.log(dices)
   }
 
   function rollspecificDices(){
     setDice(currentDices => currentDices.map(dice => {
-     
       if (dice.select) {
         let tempNum = 1 + Math.random() * (6 - 1)
         return {
           ...dice,
+          select:false,
           value: tempNum
         }
       }
       return dice;
     }))
+    
   }
-
-  return (
-    <div className="App">
-      <div>
-        {mode}
+  return ( 
+      <div className = "bg-slate-700  h-screen" >
+        <Navbar mode={mode} setModel={setModel} start={start} gameMode={GAMEMODE}/>
+        <Content  dices={dices}  gameMode={GAMEMODE} mode={mode} toggle = {toggleDice} rollAllDices={rollAllDices} rollspecificDices={rollspecificDices}
+        />
       </div>
-      <div className="DicesArea">
-          {
-            dices && dices.map((showDice, index)=>{
-              return <div key={index}>
-                      <label>
-                        {mode===GAMEMODE[0]&& <button id={showDice.id} onClick={e=>toggleDice(showDice.id)} className='dnone'></button>}
-                        <Dice id = {
-                          showDice.id
-                        }
-                        value = {
-                          showDice.value
-                        }
-                        select = {
-                          showDice.select
-                        }
-                        mode={mode}
-                        />
-                      </label>
-                    </div>
-            })
-          }
-      </div>
-      <div>
-        <button onClick = {()=>start(GAMEMODE[0])} >幸運 </button>
-        <button  onClick={()=>start(GAMEMODE[1])}>大話</button>
-      </div>
-      
-      <button>Reset</button>
-        {mode === GAMEMODE[0]&&(<button onClick={rollspecificDices}>Lucky Roll</button>)}
-        {mode === GAMEMODE[1]&&(<button onClick={rollAllDices}>Liar Roll</button>)}
-
-    </div>
   )
 }
 
