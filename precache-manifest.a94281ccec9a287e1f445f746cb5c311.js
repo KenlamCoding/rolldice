@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "70164c8122cd722c2495",
-    "url": "/rolldice/static/css/main.6983285c.chunk.css"
+    "revision": "1efaf7af0322c90ab120",
+    "url": "/rolldice/static/css/main.663ecb5d.chunk.css"
   },
   {
-    "revision": "70164c8122cd722c2495",
-    "url": "/rolldice/static/js/main.70164c81.chunk.js"
+    "revision": "1efaf7af0322c90ab120",
+    "url": "/rolldice/static/js/main.1efaf7af.chunk.js"
   },
   {
     "revision": "3e3c3eb55c09e01a1300",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/rolldice/static/js/runtime~main.63eafda9.js"
   },
   {
-    "revision": "b75eb733e28d5687e5b0c79f2dc99cf7",
+    "revision": "c0713afb75c9bb6e80a7a91f0e4fcde3",
     "url": "/rolldice/index.html"
   }
 ];

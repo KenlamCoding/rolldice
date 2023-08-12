@@ -1,15 +1,15 @@
 {
-  "main.css": "/rolldice/static/css/main.6983285c.chunk.css",
-  "main.js": "/rolldice/static/js/main.70164c81.chunk.js",
-  "main.js.map": "/rolldice/static/js/main.70164c81.chunk.js.map",
+  "main.css": "/rolldice/static/css/main.663ecb5d.chunk.css",
+  "main.js": "/rolldice/static/js/main.1efaf7af.chunk.js",
+  "main.js.map": "/rolldice/static/js/main.1efaf7af.chunk.js.map",
   "static/js/1.3e3c3eb5.chunk.js": "/rolldice/static/js/1.3e3c3eb5.chunk.js",
   "static/js/1.3e3c3eb5.chunk.js.map": "/rolldice/static/js/1.3e3c3eb5.chunk.js.map",
   "static/js/2.3c08d543.chunk.js": "/rolldice/static/js/2.3c08d543.chunk.js",
   "static/js/2.3c08d543.chunk.js.map": "/rolldice/static/js/2.3c08d543.chunk.js.map",
   "runtime~main.js": "/rolldice/static/js/runtime~main.63eafda9.js",
   "runtime~main.js.map": "/rolldice/static/js/runtime~main.63eafda9.js.map",
-  "static/css/main.6983285c.chunk.css.map": "/rolldice/static/css/main.6983285c.chunk.css.map",
+  "static/css/main.663ecb5d.chunk.css.map": "/rolldice/static/css/main.663ecb5d.chunk.css.map",
   "index.html": "/rolldice/index.html",
-  "precache-manifest.026718bbb296e8a78772a4b36bceb41d.js": "/rolldice/precache-manifest.026718bbb296e8a78772a4b36bceb41d.js",
+  "precache-manifest.a94281ccec9a287e1f445f746cb5c311.js": "/rolldice/precache-manifest.a94281ccec9a287e1f445f746cb5c311.js",
   "service-worker.js": "/rolldice/service-worker.js"
 }
