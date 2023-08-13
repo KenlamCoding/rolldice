@@ -1,13 +1,16 @@
 import React from 'react'
 import {
   useState,
-  useId
+  useId,
+  useEffect
 } from "react";
 import Dice from "./component/Dice";
 import Navbar from './component/Navbar';
 import Content from './component/Content';
+import AntiCheat from './component/AntiCheat';
 const GAMEMODE =  ["LUCKY", "LIAR"]
 function App() {
+
   const [mode, setModel] = useState(GAMEMODE[0])
   const [dices, setDice] = useState([{
     id: useId(),
@@ -31,7 +34,12 @@ function App() {
     select: false
   }
 ])
+  const currentDate = new Date();
+  const [timestamp, setTimestemp] = useState(String(currentDate.getHours()).padStart(2, '0') + ":" + String(currentDate.getMinutes()).padStart(2, '0') + ":" + String(currentDate.getSeconds()).padStart(2, '0'))
 
+useEffect(()=>{
+  setTimestemp(String(currentDate.getHours()).padStart(2, '0') + ":" + String(currentDate.getMinutes()).padStart(2, '0') + ":" + String(currentDate.getSeconds()).padStart(2, '0'))
+},[dices])
 function start(nowMode){
   setModel(nowMode);
 }
@@ -73,11 +81,13 @@ function start(nowMode){
     }))
     
   }
+
   return ( 
       <div className = "bg-slate-700  h-screen" >
         <Navbar mode={mode} setModel={setModel} start={start} gameMode={GAMEMODE}/>
         <Content  dices={dices}  gameMode={GAMEMODE} mode={mode} toggle = {toggleDice} rollAllDices={rollAllDices} rollspecificDices={rollspecificDices}
         />
+        <AntiCheat mode={mode} gameMode={GAMEMODE} timestamp={timestamp}/>
       </div>
   )
 }
