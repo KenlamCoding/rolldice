@@ -13,7 +13,12 @@ export default function Navbar(props) {
           () => props.start(props.gameMode[1])
         } >大話骰
         </button>
-
+        <button 
+        className = "rounded-md m-2 bg-tran text-xl text-white p-5 h-15 hover:bg-slate-200 hover:text-black"
+        onClick = {
+          () => props.start(props.gameMode[2])
+        } >紅黑單雙大細
+        </button>
     </nav>
   )
 }
