@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/rolldice/static/css/main.6332912b.css",
-    "main.js": "/rolldice/static/js/main.a2ff81fa.js",
+    "main.css": "/rolldice/static/css/main.723a8e37.css",
+    "main.js": "/rolldice/static/js/main.68978b88.js",
     "static/js/787.33889c3c.chunk.js": "/rolldice/static/js/787.33889c3c.chunk.js",
     "index.html": "/rolldice/index.html",
-    "main.6332912b.css.map": "/rolldice/static/css/main.6332912b.css.map",
-    "main.a2ff81fa.js.map": "/rolldice/static/js/main.a2ff81fa.js.map",
+    "main.723a8e37.css.map": "/rolldice/static/css/main.723a8e37.css.map",
+    "main.68978b88.js.map": "/rolldice/static/js/main.68978b88.js.map",
     "787.33889c3c.chunk.js.map": "/rolldice/static/js/787.33889c3c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6332912b.css",
-    "static/js/main.a2ff81fa.js"
+    "static/css/main.723a8e37.css",
+    "static/js/main.68978b88.js"
   ]
 }
