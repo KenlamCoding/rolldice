@@ -24,23 +24,28 @@ export default function Content(props){
                   </div>
                 })}
               
-              {props.mode === props.gameMode[0] && (<button  className='dice text-xl font-bold text-white bg-slate-800 hover:text-black hover:bg-slate-200' onClick={props.rollspecificDices}  title="Select dice first">Roll</button>)}
-                {props.mode === props.gameMode[1] && (<button className='dice text-xl font-bold text-white bg-slate-800 hover:text-black hover:bg-slate-200' onClick={props.rollAllDices}>Roll</button>)}
-                
+              
 
             </div>
+            {
+              props.mode === props.gameMode[0] &&<div className = "DicesArea grid grid-cols-2 gap-1 place-items-center max-w-sm mx-auto my-20 " >
+              {(<button  className='dice text-xl font-bold text-white bg-slate-800 hover:text-black hover:bg-slate-200' onClick={props.rollAllDices}  title="Select dice first">Reset</button>)}
+              {(<button  className='dice text-xl font-bold text-white bg-slate-800 hover:text-black hover:bg-slate-200' onClick={props.rollspecificDices}  title="Select dice first">Roll</button>)}
+              </div>
+            }
+            {
+              props.mode === props.gameMode[1] &&<div className = "DicesArea grid grid-cols-1 gap-1 place-items-center max-w-sm mx-auto my-20 " >
+              {(<button className='dice text-xl font-bold text-white bg-slate-800 hover:text-black hover:bg-slate-200' onClick={props.rollAllDices}>Roll</button>)}
+            </div>
+            }
             <div className = "DicesArea grid grid-cols-4 gap-1 place-items-center max-w-sm mx-auto my-20 " >
-                
+              
               {props.mode === props.gameMode[2] && (<button className='dice text-xl font-bold text-white bg-slate-800 hover:text-black hover:bg-slate-200' onClick={props.reset} title="New Game">Reset</button>)}
-                {props.mode === props.gameMode[2] && (<button className='dice text-xl font-bold text-white bg-slate-800 hover:text-black hover:bg-slate-200' onClick={props.rollAllDices} title="NewRound">Roll</button>)}
-                {props.mode === props.gameMode[2] && (<button className='dice text-xl font-bold text-white bg-slate-800 hover:text-black hover:bg-slate-200' onClick={()=>{props.removeDice(props.eliminate[0])}}>red</button>)}
-                {props.mode === props.gameMode[2] && (<button className='dice text-xl font-bold text-white bg-slate-800 hover:text-black hover:bg-slate-200' onClick={()=>{props.removeDice(props.eliminate[1])}}>black</button>)}
-                {props.mode === props.gameMode[2] && (<button className='dice text-xl font-bold text-white bg-slate-800 hover:text-black hover:bg-slate-200' onClick={()=>{props.removeDice(props.eliminate[2])}}>odd</button>)}
-                {props.mode === props.gameMode[2] && (<button className='dice text-xl font-bold text-white bg-slate-800 hover:text-black hover:bg-slate-200' onClick={()=>{props.removeDice(props.eliminate[3])}}>even</button>)}
-                {props.mode === props.gameMode[2] && (<button className='dice text-xl font-bold text-white bg-slate-800 hover:text-black hover:bg-slate-200' onClick={()=>{props.removeDice(props.eliminate[4])}}>Big</button>)}
-                {props.mode === props.gameMode[2] && (<button className='dice text-xl font-bold text-white bg-slate-800 hover:text-black hover:bg-slate-200' onClick={()=>{props.removeDice(props.eliminate[5])}}>small</button>)}
-                
-
+              {props.mode === props.gameMode[2] && (<button className='dice text-xl font-bold text-white bg-slate-800 hover:text-black hover:bg-slate-200' onClick={props.rollAllDices} title="NewRound">Roll</button>)}
+              {props.mode === props.gameMode[2] && 
+              props.eliminate.map((eAction, index) => 
+              <button className='dice text-xl font-bold text-white bg-slate-800 hover:text-black hover:bg-slate-200' 
+              onClick={()=>{props.removeDice(props.eliminate[index])}} title="NewRound">{eAction}</button>)}
             </div>
             
       </div>

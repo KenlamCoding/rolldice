@@ -17,7 +17,7 @@ export default function Navbar(props) {
         className = "rounded-md m-2 bg-tran text-xl text-white p-5 h-15 hover:bg-slate-200 hover:text-black"
         onClick = {
           () => props.start(props.gameMode[2])
-        } >紅黑單雙大細
+        } >紅黑單雙
         </button>
     </nav>
   )

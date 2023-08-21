@@ -9,7 +9,7 @@ import Navbar from './component/Navbar';
 import Content from './component/Content';
 import AntiCheat from './component/AntiCheat';
 const GAMEMODE =  ["LUCKY", "LIAR","REDBLACK"];
-const ELIMINATE = ["red","black",  "odd","even","morethenthree",  "lessthenfour" ];
+const ELIMINATE = ["red","black",  "odd","even","big",  "small" ];
 function App() {
 
   const [mode, setModel] = useState(GAMEMODE[0])
@@ -105,7 +105,6 @@ function reset(){
     
   }
 
-  
   function removeDice(action){
       //After remove the Dice, the dice will be rolled
       switch (action) {
